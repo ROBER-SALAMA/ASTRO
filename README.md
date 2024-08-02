@@ -12,6 +12,8 @@ npm create astro@latest -- --template minimal
 
 ## 🚀 Project Structure
 
+## page not found: [(https://dev.to/stackfindover/35-html-404-page-templates-5bge)]
+
 Inside of your Astro project, you'll see the following folders and files:
 
 ```text

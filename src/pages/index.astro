@@ -1,34 +1,27 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro";
+
+// server only
 const nombre: string = "Roberto Carlos";
-const title: string = "ASTRO";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body>
-    <h1>{nombre}</h1>
+<MainLayout title="Home page">
 
-    <p>Momento actual: {new Date().toLocaleTimeString()}</p>
-    <p id="momemt">Momento actual real:</p>
+  <h1>{nombre}</h1>
+  <h2>Home</h2>
 
-    <footer>Año: 2023</footer>
-  </body>
-</html>
+  <p>Momento actual: {new Date().toLocaleTimeString()}</p>
+  <p id="momemt">Momento actual real:</p>
 
-<script>
-	// client only
-  const currentYear: number = new Date().getFullYear();
-  const footer = document.querySelector("footer") as HTMLElement;
-  footer.innerText = `Año ${currentYear}`;
+  <footer>Año: 2023</footer>
+  <script>
+    // client only
+    const currentYear: number = new Date().getFullYear();
+    const footer = document.querySelector("footer") as HTMLElement;
+    footer.innerText = `Año ${currentYear}`;
 
-
-//   const currenMoment: number = new Date().toLocaleDateString();
-  const time = document.querySelector("#momemt") as HTMLParagraphElement;
-  time.innerText = `Momento actual real ${ new Date().toLocaleTimeString()}`;
-</script>
+    //   const currenMoment: number = new Date().toLocaleDateString();
+    const time = document.querySelector("#momemt") as HTMLParagraphElement;
+    time.innerText = `Momento actual real ${new Date().toLocaleTimeString()}`;
+  </script>
+</MainLayout>
