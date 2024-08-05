@@ -1,14 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { fade } from "astro:transitions";
 
 // server only
 const nombre: string = "Roberto Carlos";
 ---
 
 <MainLayout title="Home page">
-
-  <h1>{nombre}</h1>
-  <h2>Home</h2>
+  <h1 transition:animate="slide">{nombre}</h1>
+  <h2 transition:animate={fade({ duration: "0.4s" })}>Home</h2>
 
   <p>Momento actual: {new Date().toLocaleTimeString()}</p>
   <p id="momemt">Momento actual real:</p>
